@@ -1,0 +1,24 @@
+@import "../../../styles.scss";
+@import "../../../colors.scss";
+
+.device-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.device-cards {
+  align-items: center;
+  background-color: $color-cream;
+  border: 1px solid $color-white;
+  border-radius: 30px;
+  box-shadow: 0 0 15px $color-brown;
+  color: $color-black;
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  justify-content: left;
+  margin: 25px;
+  padding: 20px;
+  width: 16vw;
+}

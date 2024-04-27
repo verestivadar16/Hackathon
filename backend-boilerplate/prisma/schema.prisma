@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Neighbours {
+  id        String @id @unique @default(uuid())
+  roomName  String
+  neighbour String
+  roomId    String // referencia mező a Rooms modellhez
+  room      Rooms  @relation(fields: [roomId], references: [id])
+}
+
+model Rooms {
+  id           String         @id @unique @default(uuid())
+  name         String
+  level        Int
+  capacity     Int
+  neighbours   Neighbours[]
+  reservations Reservations[] // A kapcsolat módosítása egy-több kapcsolatra
+}
+
+model Reservations {
+  id               String                  @id @unique @default(uuid())
+  roomId           String // referencing the Rooms model
+  room             Rooms                   @relation(fields: [roomId], references: [id])
+  startTime        String // You may want to change these to DateTime
+  endTime          String // depending on how you handle time
+  userId           String
+  choosenDate      DateTime // Adjust this to DateTime from the DTO
+  disturbingFactor Boolean
+  description      String
+  devices          DevicesOnReservations[]
+  Users            Users?                  @relation(fields: [userId], references: [id])
+}
+
+model Devices {
+  id           String                  @id @unique @default(uuid())
+  name         String
+  isAvailable  Boolean
+  reservations DevicesOnReservations[]
+}
+
+model DevicesOnReservations {
+  device        Devices      @relation(fields: [deviceId], references: [id])
+  deviceId      String // relation scalar field (used in the `@relation` attribute above)
+  reservation   Reservations @relation(fields: [reservationId], references: [id])
+  reservationId String // relation scalar field (used in the `@relation` attribute above)
+  assignedAt    DateTime     @default(now())
+  assignedBy    String
+
+  @@id([deviceId, reservationId])
+}
+
+model Users {
+  id           String         @id @unique @default(uuid())
+  userName     String
+  tel          String
+  email        String         @unique
+  passwordHash String
+  role         String
+  reservations Reservations[]
+}

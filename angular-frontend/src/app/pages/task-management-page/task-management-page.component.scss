@@ -1,0 +1,64 @@
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+
+}
+
+.task-list {
+  overflow-y: auto;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.task-name,
+.task-description,
+.task-due-time {
+  font-size: 16px;
+}
+
+.add-task {
+  position: sticky;
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-task input,
+.add-task textarea,
+.add-task button {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.add-task button {
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.task-progress-bar {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

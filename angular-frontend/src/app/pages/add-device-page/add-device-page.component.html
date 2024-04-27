@@ -1,0 +1,23 @@
+<main>
+  <body>
+    <form [formGroup]="deviceForm" (submit)="submitDevice()">
+      <label for="device-name">Eszköz megnevezése</label>
+      <input
+        id="device-name"
+        type="text"
+        formControlName="deviceName"
+        required
+      />
+      <label for="device-description">Eszköz leírása</label>
+      <input
+        id="device-description"
+        type="text"
+        formControlName="deviceDescription"
+        required
+      />
+      <button type="submit" class="primary">
+        Eszköz hozzáadása az eszköztárhoz
+      </button>
+    </form>
+  </body>
+</main>

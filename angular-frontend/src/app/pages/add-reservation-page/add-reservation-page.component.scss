@@ -1,0 +1,182 @@
+@import "../../../styles.scss";
+@import "../../../colors.scss";
+
+form {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-white;
+  border-radius: 5px;
+  background-color: $color-cream;
+  box-shadow: 0 0 10px 0 $color-brown;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  -moz-border-radius: 100px / 50px;
+  -webkit-border-radius: 100px / 50px;
+  border-radius: 70px / 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+td.reserved {
+  background-color: black;
+  color: white; /* Change the text color to ensure it's readable on the black background */
+  cursor: default; /* Change the cursor to the default cursor to indicate the cell is not clickable */
+}
+
+.room-select {
+  width: 200px;
+  height: 25px;
+}
+
+.room-select,
+.device-select {
+  font-size: 20px;
+}
+
+.option {
+  font-size: 15px;
+}
+
+.select-device {
+  display: flex;
+  flex-direction: row;
+  background-color: #ff9100;
+  padding: 20px;
+  border-radius: 20px;
+  gap: 30px;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dev-container {
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  background-color: $color-cream;
+  overflow-y: scroll;
+}
+
+.dev-container div {
+  cursor: pointer;
+  background-color: #007bff;
+  margin: 5px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: red; // Change this to the color you want when hovering
+  }
+}
+
+.device-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chosen-lable,
+.device-select {
+  margin-right: 30px;
+}
+
+.reservation-type,
+.room-details,
+.choosen-date,
+.room-label {
+  gap: 30px;
+}
+
+.room-details,
+.disturbing-factor {
+  display: flex;
+  flex-direction: row;
+}
+
+.reservation-type,
+.room-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-details,
+.room-description,
+.disturbing-factor,
+.calendar,
+.choosen-date,
+.reservation-type {
+  justify-content: flex-start;
+  font-size: 20px;
+  margin-top: 30px;
+}
+.calendar {
+  margin-top: 0px;
+}
+
+.primary {
+  background-color: $color-deep-red;
+  color: $color-white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 45%;
+  margin-right: 45%;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+button:hover {
+  background-color: $color-deep-red;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.time-slots {
+  border-collapse: collapse;
+  width: 100%;
+}
+.time-slots th,
+.time-slots td {
+  border: 1px solid #353333;
+  padding: 8px;
+  text-align: center;
+}
+.time-slots th:hover,
+td:hover {
+  background-color: #a750dd;
+}
+
+.selected {
+  background-color: #007bff;
+  color: #fff;
+}

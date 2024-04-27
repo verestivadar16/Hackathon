@@ -1,0 +1,138 @@
+<form [formGroup]="reservationForm" (submit)="submitReservation()">
+  <div class="container">
+    <div class="info">
+      <div class="reservation-type">
+        <div class="isReservation">
+          <label for="isReservation"
+            >Foglalast akar letrehozni jelolje be:</label
+          >
+          <input
+            type="checkbox"
+            formControlName="reservationCheckBox"
+            (click)="changeReservationState()"
+          />
+          @if (isReservation) {
+          <div>
+            <label for="reservatorName">Foglalo Neve:</label>
+            <input
+              type="text"
+              id="reservatorsName"
+              formControlName="reservatorsName"
+              required
+            />
+          </div>
+          }
+        </div>
+
+        <div class="isTask">
+          <label for="isTask">Feladatot akar letrehozni jelolje be:</label>
+          <input
+            type="checkbox"
+            formControlName="taskCheckBox"
+            (click)="changeTaskState()"
+          />
+          @if (isTask) {
+          <div>
+            <label for="taskName">Feladat megnevezese:</label>
+            <input
+              type="text"
+              id="taskName"
+              formControlName="taskName"
+              required
+            />
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="choosen-date">
+        <label for="chosen-date" class="chosen-lable"
+          >Valassza ki a napot</label
+        >
+        <input
+          type="date"
+          class="calendar"
+          formControlName="choosenDate"
+          (change)="onDateChange($event)"
+        />
+      </div>
+
+      <div class="disturbing-factor">
+        <label for="disturbingFactor"
+          >Zavaro/hangos tevekenyseg eseten jelölje be:</label
+        >
+        <input
+          type="checkbox"
+          formControlName="disturbingFactor"
+          (click)="changeDisturbingState()"
+        />
+      </div>
+
+      <div class="room-details">
+        <label for="room" class="rool-label">Valassza ki a termet</label>
+        <select
+          formControlName="room"
+          class="room-select"
+          (change)="onRoomChange($event)"
+        >
+          <option value="" disabled selected>Termek listaja</option>
+          <option
+            *ngFor="let room of mockRooms"
+            [value]="room.name"
+            class="option"
+          >
+            {{ room.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="select-device">
+      <div class="device-label">Szukseg eseten valasszon eszkozt</div>
+      <div style="display: flex; flex-direction: column">
+        <div>Nem valasztott eszkozok</div>
+        <div class="dev-container">
+          <div
+            *ngFor="let device of mockDevices"
+            (click)="selectDevice(device)"
+          >
+            {{ device.name }}
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column">
+        <div>Valsztott Eszkozok</div>
+        <div class="dev-container">
+          <div
+            *ngFor="let device of selectedDevices"
+            (click)="unSelectDevice(device)"
+          >
+            {{ device.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="time-slots">
+    <tbody>
+      <ng-container *ngFor="let row of intervalList; let i = index">
+        <tr>
+          <ng-container *ngFor="let timeSlot of getRowTimeSlots(i)">
+            <td
+              (click)="toggleColor(timeSlot.index)"
+              [class.selected]="isSelected[timeSlot.index]"
+              [class.reserved]="isTimeSlotReserved(timeSlot)"
+              [attr.disabled]="isTimeSlotReserved(timeSlot) ? true : null"
+            >
+              {{ timeSlot.display }}
+            </td>
+          </ng-container>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <button type="submit" class="primary">Foglalás</button>
+</form>

@@ -1,0 +1,12 @@
+<div class="room-list-container">
+  @for (item of mockRooms; track $index) {
+  <div class="room-cards">
+    <p>Terem név: {{ item.name }}</p>
+    <p>Terem száma: {{ item.number }}</p>
+    <p>Terem ezen a szinten található: {{ item.floor }}</p>
+    <p>Terem leírása: {{ item.description }}</p>
+    <p>Terem kapacitása: {{ item.capacity }}</p>
+    <button (click)="navToRoomDetailPage(item)">Tovább a foglaláshoz.</button>
+  </div>
+  }
+</div>

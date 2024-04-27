@@ -1,0 +1,52 @@
+<main>
+  <body>
+    <form [formGroup]="deviceForm" (submit)="submitUser()">
+      <label for="user-name">Felhasználónév</label>
+      <input
+        id="device-name"
+        type="text"
+        formControlName="deviceName"
+        required
+      />
+
+
+      <div class="reservation-container">
+        <label for="role-select">Válasszon szerepet</label>
+      </div>
+      <div class="reservation-container">
+        <select id="role-select" class="dropdown-menu">
+          <option value="">----</option>
+          <option value="item1">Owner</option>
+          <option value="item2">Admin</option>
+          <option value="item2">Moderator</option>
+          <option value="item2">Staff</option>
+        </select>
+      </div>
+
+      <label for="user-password">Jelszó</label>
+      <input
+        id="user-password"
+        type="password"
+        formControlName="userPassword"
+        required
+      />
+
+      <label for="user-password">Jelszó ismétlése</label>
+      <input
+        id="user-password"
+        type="password"
+        formControlName="userPassword"
+        required
+      />
+
+      <!-- <div *ngIf="deviceForm.controls['userPasswordConfirmation'].errors?.passwordMismatch">
+        <span class="error-message">Jelszavak nem egyeznek!</span>
+      </div> -->
+
+
+      <button type="submit" class="primary">
+        Felhasználó hozzáadása
+      </button>
+    </form>
+  </body>
+</main>

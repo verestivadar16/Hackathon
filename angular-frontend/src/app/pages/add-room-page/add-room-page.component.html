@@ -1,0 +1,71 @@
+<form [formGroup]="roomForm" (submit)="submitRoom()">
+  <div class="form-container">
+    <div class="add_room_box">
+      <div class="room-details">
+        <div class="room-name-number">
+          <label for="room-Name">Terem neve:</label>
+          <input
+            type="text"
+            id="room-Name"
+            formControlName="roomName"
+            required
+          />
+        </div>
+
+        <div class="room-number">
+          <label for="room-number">Teremszám:</label>
+          <input
+            type="number"
+            id="room-number"
+            formControlName="roomNumber"
+            required
+          />
+        </div>
+
+        <div class="room-floor">
+          <label for="room-floor">Emelet:</label>
+          <input
+            type="number"
+            id="room-floor"
+            formControlName="roomFloor"
+            required
+          />
+        </div>
+
+        <div class="room-capacity">
+          <label for="room-capacity">Terem befogadóképessége:</label>
+          <input
+            type="number"
+            id="room-capacity"
+            formControlName="roomCapacity"
+            required
+          />
+        </div>
+
+        <div class="room-description">
+          <label for="room-description">Terem leírása:</label>
+          <input
+            id="room-description"
+            formControlName="roomDescription"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="room-photo-button">
+        <svg width="200" height="50">
+          <image
+            href="assets/images/add_room_image.png"
+            width="200"
+            height="30"
+          />
+          <text x="25" y="45" fill="#333" font-size="14" font-weight="500">
+            Fénykép hozzáadása
+          </text>
+        </svg>
+        <input type="file" id="room-photo" accept="image/*" hidden />
+      </div>
+    </div>
+    <button type="submit" class="primary">Terem létrehozása</button>
+  </div>
+</form>

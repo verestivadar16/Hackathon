@@ -1,0 +1,11 @@
+@import "./colors";
+@import "./fonts";
+//@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+body {
+  background-color: $color-light-brown;
+  font-family: $font-header;
+}

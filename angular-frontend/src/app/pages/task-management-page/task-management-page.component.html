@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="task-list">
+    <h1>Elkövetkezendő feladatok</h1>
+
+    @for (task of tasks; track $index) {
+      <div class="task-box">
+        <div class="task-name">{{ task.name }}</div>
+        <div class="task-due-time">{{ task.dueDate  }}</div>
+        <div class="task-description">{{ task.description }}</div>
+      </div>
+    }
+
+  </div>
+  <div class="add-task">
+    <h2>Új feladat</h2>
+    <label for="name">Megnevezés:</label>
+    <input type="text" id="name" placeholder="Enter task name">
+    <label for="description">Leirás:</label>
+    <textarea id="description" placeholder="Describe the task"></textarea>
+    <label for="due-date-time">Időpont kezdete:</label>
+    <input type="datetime-local" id="due-date-time">
+    <button >Feladat hozzáadása</button>
+  </div>
+</div>

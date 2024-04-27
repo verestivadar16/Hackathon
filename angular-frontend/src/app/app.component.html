@@ -1,0 +1,40 @@
+<!-- app.component.html -->
+
+<header class="kulton-header">
+  <div class="banner"></div>
+
+  <div class="room-container">
+    <button class="button-room">Termek &nbsp; ▼</button>
+    <div class="dropdown-content">
+      <a id="top" (click)="navToRooms()">Terem lista</a>
+      <a id="bottom" (click)="navToAddRoom()">Terem létrehozás</a>
+    </div>
+  </div>
+
+  <div class="reservation-container">
+    <button class="button-reservation">Foglalások &nbsp; ▼</button>
+    <div class="dropdown-content">
+      <a id="top" (click)="navToReservations()">Foglalás lista</a>
+      <a id="bottom" (click)="navToAddReservation()">Foglalás létrehozás</a>
+    </div>
+  </div>
+
+  <div class="device-container">
+    <button class="button-device">Eszköztár &nbsp; ▼</button>
+    <div class="dropdown-content">
+      <a id="top" (click)="navToDevices()">Eszköz lista</a>
+      <a id="bottom" (click)="navToAddDevice()">Eszköz létrehozás</a>
+    </div>
+  </div>
+
+  <div class="user-container">
+    <button class="button-user">Felhasználó &nbsp; ▼</button>
+    <div class="dropdown-content">
+      <a id="top" (click)="logIn()">Log in</a>
+      <a id="bottom" (click)="logOut()">Log out</a>
+    </div>
+  </div>
+</header>
+
+<router-outlet></router-outlet>
+```

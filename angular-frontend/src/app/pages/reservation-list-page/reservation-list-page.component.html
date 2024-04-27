@@ -1,0 +1,21 @@
+<div class="reservation-list-container">
+  <div
+    class="reservation-cards"
+    *ngFor="let item of mockReservations; let i = index"
+  >
+    <p>Foglalás azonosítója: {{ item.id }}</p>
+    <p>Foglalás kezdete: {{ item.startTime }}</p>
+    <p>Foglalás vége: {{ item.endTime }}</p>
+    <p>Foglalás terem azonosítója: {{ item.roomId }}</p>
+    <!-- <p>Foglalás terem neve: {{ item.roomName }}</p> -->
+    <p>UserId: {{ item.userId }}</p>
+    <p>Foglalás eszkoz id: {{ item.deviceId }}</p>
+    <p>Foglalás keszitoje: {{ item.reservedBy }}</p>
+    <p>Foglalás napja: {{ item.choosenDate }}</p>
+    <p>Van e zavaro faktor: {{ item.disturbingFactor }}</p>
+    <p>Leiras {{ item.description }}</p>
+    <button (click)="navToReservationDetailPage(item)">
+      Tovább a foglaláshoz.
+    </button>
+  </div>
+</div>

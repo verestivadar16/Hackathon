@@ -1,0 +1,78 @@
+/* login.component.css */
+@import "../../../styles.scss";
+@import "../../../_colors.scss";
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.picture,
+.login-box {
+  width: 34vw;
+  height: 34vw;
+}
+
+.picture {
+  background-image: url("../../../assets/images/left-part.png");
+  border-left: 3px solid $color-black;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  border-radius: 4px;
+  border: 3px solid $color-black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background-image: url("../../../assets/images/right-part.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid $color-cream;
+  box-shadow: 0 0 15px $color-brown;
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid $color-light-brown;
+  border-radius: 3px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: $color-deep-red;
+  color: $color-white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: $color-light-brown;
+}
